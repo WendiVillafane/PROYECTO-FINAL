@@ -1,0 +1,76 @@
+.fondo {
+    background-color: #C1D72F; /* Fondo verde */
+    padding: 40px;
+    max-width: 400px; /* Ancho máximo del contenedor */
+    margin: 0 auto; /* Centrado horizontal */
+    margin-top: 50px;
+}
+
+.fondo h1 {
+    text-align: center;
+    margin: 1px;
+    margin-bottom: 30px;
+    color: #000000; /* Color de texto negro */
+    text-shadow: 0 0 10px rgba(255,255,255,0.7); /* Efecto neon en el texto */
+}
+
+.fondo form {
+    background-color: #C1D72F;
+    padding: 10px;
+    border-radius: 0px;
+    box-shadow: 0 0 20px rgba(28, 30, 20, 0.5), /* Efecto neon en el formulario */
+                0 0 30px rgba(255, 255, 255, 0.5),
+                0 0 40px rgba(255, 255, 255, 0.5),
+                0 0 50px rgba(255, 255, 255, 0.5);
+}
+
+.fondo label {
+    display: block;
+    margin-bottom: 10px; /* Se ajustó el margen inferior */
+    font-weight: bold;
+    color: #000000; /* Color de texto negro */
+    text-shadow: 0 0 10px rgba(255,255,255,0.7); /* Efecto neon en el texto */
+}
+
+.fondo input[type="text"],
+.fondo input[type="email"],
+.fondo input[type="file"] {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 10px; /* Se redujo el margen inferior */
+    border-radius: 0px;
+    border: 1px solid #ffffff;
+    box-sizing: border-box;
+    transition: background-color 0.3s ease; /* Transición suave del color de fondo */
+    background-color: #d2e364; /* Color de fondo original */
+}
+
+/* Cambio de color de fondo cuando el campo está enfocado */
+.fondo input[type="text"]:focus,
+.fondo input[type="email"]:focus,
+.fondo input[type="file"]:focus {
+    background-color: #ffffff; /* Cambia a blanco cuando se enfoca */
+}
+
+.fondo input[type="checkbox"] {
+    margin-bottom: 5px; /* Se ajustó el margen inferior del input checkbox */
+    vertical-align: middle; /* Alineación vertical para centrar con el texto */
+}
+
+.fondo button {
+    padding: 10px;
+    background-color: #ffffff; /* Color de fondo blanco */
+    color: #000000; /* Color del texto */
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    display: block; /* Convertir el botón en un bloque para aplicar márgenes */
+    margin: 0 auto;
+    font-weight: bold;/* Establecer los márgenes automáticos para centrar horizontalmente */
+}
+
+
+
+.fondo button:hover {
+    background-color: #ffffff; /* Verde más oscuro al pasar el ratón */
+}

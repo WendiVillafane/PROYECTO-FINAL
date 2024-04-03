@@ -1,0 +1,94 @@
+.linea {
+  width: 1400px; /* Ajusta el ancho del separador según tus preferencias */
+  height: 4px; /* Establece la altura del separador */
+  display: inline-block; /* Coloca el separador en línea con el texto */
+  margin-right: 20px; /* Espacio entre la palabra y el separador */
+  padding: 6px; /* Ajusta el espacio entre el separador y el siguiente contenido */
+}
+
+.card-favorite {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr)); /* Ajusta el tamaño de la columna según el espacio disponible */
+  gap: 20px; /* Espacio entre las tarjetas */
+  margin-left: -60px; /* Ajusta el margen izquierdo para rodar un poco a la izquierda */
+}
+
+.favorite-container {
+  padding: 0px; /* Añade un espacio alrededor del contenedor */
+}
+
+.favorites {
+  width: 250px; /* Ancho de la tarjeta */
+  height: 270px; /* Altura de la tarjeta */
+  border: 1px solid #ccc;
+  border-radius: 0px;
+  padding: 10px;
+  margin: 20px auto; /* Centra la tarjeta horizontalmente */
+  box-shadow: 0 6px 9px rgba(0, 0, 0, 0.1);
+  text-align: center; /* Centra el contenido */
+}
+
+.favorites img {
+  max-width: 100%; /* Hace que la imagen se ajuste al ancho de la tarjeta */
+  border-radius: 50%; /* Hace que la imagen sea circular */
+  margin-bottom: 10px; /* Espacio debajo de la imagen */
+}
+
+.favorites h3 {
+  margin: 5px 0; /* Espacio alrededor del nombre */
+  margin-top: -120px;
+
+}
+
+.favorites p {
+  margin: 5px 0; /* Espacio alrededor del correo electrónico */
+}
+
+.button-remove {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 20px;
+}
+
+.favorites .button-remove {
+  width: 32px;
+  height: 32px;
+  cursor: pointer;
+  border: 2px solid #C1D72F;
+  border-radius: 4px;
+  padding: 4px;
+  margin-left: 100px;
+
+}
+ 
+.Favoritesphoto {
+  width: 100%; /* Ancho del contenedor de la foto al 100% */
+  height: 100%; /* Altura del contenedor de la foto al 100% */
+}
+
+.Favoritesphoto img {
+  max-width: 50%; /* Hace que la imagen se ajuste al ancho del contenedor */
+  max-height: 50%; /* Hace que la imagen se ajuste a la altura del contenedor */
+}
+
+
+
+/* Media Query para dispositivos móviles */
+@media (max-width: 780px) {
+  .favorites {
+    width: 80%; /* Ancho del 90% para adaptarse a pantallas más pequeñas */
+    height: auto; /* Altura automática para ajustarse al contenido */
+    border-radius: 1px; /* Añade un borde redondeado */
+    margin: 12px auto; /* Ajusta el margen para dispositivos móviles */
+    flex-direction: column; /* Cambia la dirección del flexbox a vertical */
+    margin-bottom: 20px; /* Agrega espacio entre las tarjetas */
+  }
+
+  .favorites:last-child {
+    margin-bottom: 0; /* Elimina el espacio inferior para la última tarjeta */
+  }
+
+  .favorites img {
+    margin: 0 auto 10px; /* Centra la imagen y agrega espacio debajo */
+  }
+}

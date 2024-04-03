@@ -1,0 +1,87 @@
+.custom-linea {
+  width: 1400px; /* Ajusta el ancho del separador según tus preferencias */
+  height: 4px; /* Establece la altura del separador */
+  display: inline-block; /* Coloca el separador en línea con el texto */
+  margin-right: 20px; /* Espacio entre la palabra y el separador */
+  padding: 6px; /* Ajusta el espacio entre el separador y el siguiente contenido */
+}
+
+/* Estilo para el contenedor de las tarjetas */
+.custom-card-container {
+
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr)); /* Cambiar el tamaño de la columna según el espacio disponible */
+  gap: 50px; /* Espacio entre las tarjetas */
+  margin: 0 auto; /* Centra el contenedor horizontalmente */
+  max-width: 1250px; /* Ancho máximo del contenedor */
+  margin-right: 100px;
+}
+
+/* Estilo para cada tarjeta */
+.custom-card {
+  text-align: center;
+  width: 100%; /* Ancho de la tarjeta al 100% */
+  max-width: 250px; /* Ancho máximo de la tarjeta */
+  height: 350px; /* Altura de la tarjeta */
+  border: 1px solid #ccc;
+  border-radius: 0px;
+  padding: 10px;
+  box-shadow: 0 6px 9px rgba(0, 0, 0, 0.1);
+}
+
+/* Estilo para la imagen del contacto */
+.custom-card img {
+  width: 70%; /* Ancho de la imagen */
+  height: auto; /* Altura automática para mantener la proporción */
+  border-radius: 50%; /* Hace que la imagen sea circular */
+  object-fit: cover;
+  border: 4px solid #C1D72F; /* Borde de 2px de ancho y color verde #C1D72F */
+}
+
+/* Estilo para el nombre del contacto */
+.custom-card h3 {
+  margin-top: 12px;
+  margin-bottom: 0px;
+}
+
+/* Estilo para el correo electrónico del contacto */
+.custom-card p {
+  margin: 0;
+}
+
+/* Estilo para los botones de acción */
+.custom-button-remove {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: auto; /* Ajusta el margen superior */
+}
+
+/* Estilo para cada botón de imagen dentro del contenedor .custom-button-remove */
+.custom-button-remove .custom-button-image {
+  margin-top: 30px;
+  margin-left: 100px;
+  width: 32px; /* Ancho de la imagen */
+  height: 32px; /* Altura de la imagen */
+  cursor: pointer;
+  border: 2px solid #C1D72F;
+  border-radius: 4px;
+  padding: 4px;
+}
+
+/* Estilo cuando se pasa el mouse sobre la imagen del botón dentro del contenedor .custom-button-remove */
+.custom-button-remove .custom-button-image:hover {
+  opacity: 0.8;
+}
+
+/* Media Query para dispositivos más pequeños */
+@media screen and (max-width: 768px) {
+  .custom-card-container {
+    padding: 80px;
+    grid-template-columns: repeat(1, 1fr); /* Cambia a dos columnas en dispositivos más pequeños */
+  }
+}
+
+  
+  
+  

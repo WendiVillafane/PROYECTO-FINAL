@@ -1,0 +1,15 @@
+.linea {
+    width: 1400px; /* Ajusta el ancho del separador según tus preferencias */
+    height: 4px; /* Establece la altura del separador */
+    display: inline-block; /* Coloca el separador en línea con el texto */
+    margin-right: 20px; /* Espacio entre la palabra y el separador */
+    padding: 6px; /* Ajusta el espacio entre el separador y el siguiente contenido */
+  }
+  
+.cards-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr)); /* Ajusta el tamaño de la columna según el espacio disponible */
+    gap: 20px; /* Espacio entre las tarjetas */
+}
+
+  
