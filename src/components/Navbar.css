@@ -79,7 +79,7 @@ nav .menu span {
     color: black;
     margin-right: 20px;
     border-radius: 6px;
-    font-size: 20px;
+    font-size: 19px;
     background-color: #C1D72F;
     padding: 5px 10px;
     height: 40%;
@@ -87,7 +87,7 @@ nav .menu span {
     display: flex;
     align-items: flex-end;
     justify-content: center;
-    margin-top: 10px; /* Ajusta el espacio entre el botón y el elemento superior */
+    margin-top: 12px; /* Ajusta el espacio entre el botón y el elemento superior */
 }
 
 

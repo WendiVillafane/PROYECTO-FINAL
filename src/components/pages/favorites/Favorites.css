@@ -58,7 +58,17 @@
   border-radius: 4px;
   padding: 4px;
   margin-left: 100px;
+  /* Agrega un efecto de neón con una sombra parpadeante */
+  animation: neonEffect 1.5s ease-in-out infinite alternate;
+}
 
+@keyframes neonEffect {
+  0% {
+    box-shadow: 0 0 10px #C1D72F, 0 0 20px #C1D72F, 0 0 30px #C1D72F;
+  }
+  100% {
+    box-shadow: 0 0 20px #C1D72F, 0 0 30px #C1D72F, 0 0 40px #C1D72F;
+  }
 }
  
 .Favoritesphoto {
@@ -67,8 +77,22 @@
 }
 
 .Favoritesphoto img {
-  max-width: 50%; /* Hace que la imagen se ajuste al ancho del contenedor */
-  max-height: 50%; /* Hace que la imagen se ajuste a la altura del contenedor */
+  width: 50%; /* Ancho de la imagen */
+  height: auto; /* Altura automática para mantener la proporción */
+  border-radius: 50%; /* Hace que la imagen sea circular */
+  object-fit: cover;
+  border: 2px solid #C1D72F;
+  /* Agrega un efecto de neón con una sombra parpadeante */
+  animation: neonEffect 1.5s ease-in-out infinite alternate;
+}
+
+@keyframes neonEffect {
+  0% {
+    box-shadow: 0 0 3x #C1D72F, 0 0 20px #C1D72F, 0 0 30px #C1D72F;
+  }
+  100% {
+    box-shadow: 0 0 10px #C1D72F, 0 0 30px #C1D72F, 0 0 40px #C1D72F;
+  }
 }
 
 
@@ -76,19 +100,37 @@
 /* Media Query para dispositivos móviles */
 @media (max-width: 780px) {
   .favorites {
-    width: 80%; /* Ancho del 90% para adaptarse a pantallas más pequeñas */
+    text-align: center; /* Centra horizontalmente el contenido */
+    width: 70%; /* Ancho del 72% para adaptarse a pantallas más pequeñas */
     height: auto; /* Altura automática para ajustarse al contenido */
-    border-radius: 1px; /* Añade un borde redondeado */
-    margin: 12px auto; /* Ajusta el margen para dispositivos móviles */
-    flex-direction: column; /* Cambia la dirección del flexbox a vertical */
-    margin-bottom: 20px; /* Agrega espacio entre las tarjetas */
+    border-radius: 8px; /* Añade un borde redondeado */
+    margin: 20px auto; /* Ajusta el margen para centrar la tarjeta horizontalmente */
+    margin-bottom: 20px; 
   }
-
+  
   .favorites:last-child {
     margin-bottom: 0; /* Elimina el espacio inferior para la última tarjeta */
   }
-
+  
   .favorites img {
-    margin: 0 auto 10px; /* Centra la imagen y agrega espacio debajo */
+    margin: 0 auto 75px; /* Centra la imagen horizontalmente */
   }
+  
+  .button-remove {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 20px;
+  }
+  
+  .favorites .button-remove {
+    margin-top: 20px;
+    width: 35px;
+    height: 35px;
+    cursor: pointer;
+    border: 2px solid #C1D72F;
+    border-radius: 4px;
+    padding: 4px;
+    margin-left: 100px;
+  }
+
 }

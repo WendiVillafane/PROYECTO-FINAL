@@ -1,7 +1,7 @@
 /* Estilos para la tarjeta en dispositivos de escritorio */
 .card {
   width: 250px; /* Ancho de la tarjeta */
-  height: 350px; /* Altura de la tarjeta */
+  height: 290px; /* Altura de la tarjeta */
   display: flex;
   flex-direction: column;
   align-items: center; /* Centra horizontalmente */
@@ -15,7 +15,7 @@
 }
 
 .card img {
-  width: 70%; /* Ancho de la imagen */
+  width: 100%; /* Ancho de la imagen */
   height: auto; /* Altura automática para mantener la proporción */
   border-radius: 50%; /* Hace que la imagen sea circular */
   object-fit: cover;
@@ -23,7 +23,7 @@
 }
 
 .card h3 {
-  margin-top: 12px;
+  margin-top: 10px;
   margin-bottom: 0px;
 }
 
@@ -35,35 +35,62 @@
 .button-container {
   display: flex;
   justify-content: space-around;
-  margin-top: 20px;
+  margin-top: 10px;
+  
 }
 
 .card .button-image {
+  width: 10px;
   width: 32px;
   height: 32px;
   cursor: pointer;
   border: 2px solid #C1D72F;
   border-radius: 4px;
   padding: 4px;
+  margin-right: 10px;
+  margin-top: 10px;
+  
 }
 
 .card .button-image:hover {
   opacity: 0.8;
 }
 
+.Favoritesphoto2 {
+  width: 60%; /* Ancho del contenedor de la foto al 100% */
+  height: 90%; /* Altura del contenedor de la foto al 100% */
+  
+}
+
+.Favoritesphoto img2 {
+  width: 50%; /* Ancho de la imagen */
+  height: auto; /* Altura automática para mantener la proporción */
+  border-radius: 50%; /* Hace que la imagen sea circular */
+  object-fit: cover;
+  border: 4px solid #C1D72F;
+}
+.Favoritesphoto3{
+  width: 70%; /* Ancho del contenedor de la foto al 100% */
+  height: 90%;
+}
+
+
+
+
 /* Media Query para dispositivos móviles */
 @media (max-width: 600px) {
   .card {
-    width: 90%; /* Ancho del 90% para adaptarse a pantallas más pequeñas */
+    text-align: center;
+    width: 72%; /* Ancho del 40% para adaptarse a pantallas más pequeñas */
     height: auto; /* Altura automática para ajustarse al contenido */
     border-radius: 8px; /* Añade un borde redondeado */
-    margin: 10px auto; /* Ajusta el margen para dispositivos móviles */
-    flex-direction: column; /* Cambia la dirección del flexbox a vertical */
-    margin-bottom: 20px; /* Agrega espacio entre las tarjetas */
+    margin: 10px 0; /* Ajusta el margen para centrar la tarjeta */
+    margin-bottom: 10px; /* Agrega espacio entre las tarjetas */
   }
 
   .card:last-child {
     margin-bottom: 0; /* Elimina el espacio inferior para la última tarjeta */
+  
   }
 
 }

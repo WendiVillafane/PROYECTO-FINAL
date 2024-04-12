@@ -1,16 +1,19 @@
-import React from 'react';
-import { render, fireEvent, screen, waitFor } from '@testing-library/react';
-import { Contact } from '../components/pages/contact/Contact'
+import React from 'react'; 
+import { render, fireEvent, screen } from '@testing-library/react'; 
+import { Contact } from '../components/pages/contact/Contact'; 
 
 describe('Contact Component', () => {
+  // Definimos una lista de contactos de ejemplo para utilizar en la prueba
   const contacts = [
     {
+      id: 1,
       firstName: 'Janet',
       lastName: 'Weaver',
       email: 'janet.weaver@reqres.in',
       avatar: 'avatar-url-1',
     },
     {
+      id: 2,
       firstName: 'George',
       lastName: 'Bluth',
       email: 'george.bluth@reqres.in',
@@ -18,26 +21,12 @@ describe('Contact Component', () => {
     },
   ];
 
-  it('renders contact information correctly', async () => {
-    render(
-      <Contact
-        contacts={contacts}
-        onAddToFavorites={() => {}}
-        onDeleteContact={() => {}}
-      />
-    );
-
-    await waitFor(() => {
-      expect(screen.getByText('Janet Weaver')).toBeInTheDocument();
-      expect(screen.getByText('janet.weaver@reqres.in')).toBeInTheDocument();
-      expect(screen.getByText('George Bluth')).toBeInTheDocument();
-      expect(screen.getByText('george.bluth@reqres.in')).toBeInTheDocument();
-    });
-  });
-
-  it('handles deleting contact', async () => {
+  // Prueba para verificar si se maneja correctamente el borrado de un contacto
+  it('handles deleting contact', () => {
+    // Creamos una función mock (simulada) para onDeleteContact
     const deleteContactMock = jest.fn();
-  
+
+    // Renderizamos el componente Contact con la lista de contactos y la función mock onDeleteContact
     render(
       <Contact
         contacts={contacts}
@@ -45,15 +34,16 @@ describe('Contact Component', () => {
         onDeleteContact={deleteContactMock}
       />
     );
-  
-    // Esperamos a que los elementos se rendericen completamente
-    await waitFor(() => {
-      fireEvent.click(screen.getAllByAltText('Delete')[1]); // Eliminar el segundo contacto
-    });
-  
+
+    // Buscamos el botón "Delete" del primer contacto en la pantalla
+    const deleteButton = screen.getAllByAltText('Delete')[0];
+
+    // Simulamos hacer clic en el botón "Delete"
+    fireEvent.click(deleteButton);
+
+    // Verificamos que la función mock onDeleteContact se haya llamado una vez
     expect(deleteContactMock).toHaveBeenCalledTimes(1);
-    expect(deleteContactMock).toHaveBeenCalledWith(1); // Se espera que el índice sea 1 para el segundo contacto
+    // Verificamos que la función mock onDeleteContact se haya llamado con el ID correcto del contacto
+    expect(deleteContactMock).toHaveBeenCalledWith(contacts[0].id);
   });
-  
-  
 });

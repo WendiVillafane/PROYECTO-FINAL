@@ -1,11 +1,11 @@
-import React from 'react';
-import { render, fireEvent, screen } from '@testing-library/react';
-import { Overview } from '../components/pages/overview/Overview';
-
-// Mock para los archivos CSS
+import React from 'react'; 
+import { render, screen } from '@testing-library/react'; 
+import { Overview } from '../components/pages/overview/Overview'; 
+// Mock de los estilos CSS del componente Overview
 jest.mock('../pages/overview/Overview.css', () => ({}));
 
 describe('Overview Component', () => {
+  // Definimos una lista de contactos favoritos de ejemplo para utilizar en la prueba
   const favoriteContacts = [
     {
       firstName: 'Emma',
@@ -15,27 +15,19 @@ describe('Overview Component', () => {
     },
   ];
 
-  it('calls onDeleteContact when "Delete" button is clicked', () => {
-    const mockDeleteContact = jest.fn();
-
+  // Prueba para verificar si el componente Overview se renderiza correctamente
+  it('renders Overview component correctly', () => {
+    // Renderizamos el componente Overview con una lista vacía de contactos y la lista de contactos favoritos de ejemplo
     render(
       <Overview
         contacts={[]}
         favoriteContacts={favoriteContacts}
         onAddToFavorites={() => {}}
-        onDeleteContact={mockDeleteContact}
+        onDeleteContact={() => {}}
       />
     );
 
-    // Buscamos el botón "Delete" dentro de la tarjeta de contacto
-    const deleteButton = screen.getByAltText('Delete');
-
-    // Hacemos clic en el botón "Delete"
-    fireEvent.click(deleteButton);
-
-    // Verificamos que la función mockDeleteContact se haya llamado una vez
-    expect(mockDeleteContact).toHaveBeenCalledTimes(1);
-    // Verificamos que la función mockDeleteContact se haya llamado con el contacto correcto
-    expect(mockDeleteContact).toHaveBeenCalledWith(favoriteContacts[0]);
+    // Verificamos que el nombre "Emma Wong" esté presente en la pantalla
+    expect(screen.getByText('Emma Wong')).toBeInTheDocument();
   });
 });

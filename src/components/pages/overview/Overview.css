@@ -11,7 +11,7 @@
 
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(350px, 1fr)); /* Cambiar el tamaño de la columna según el espacio disponible */
-  gap: 50px; /* Espacio entre las tarjetas */
+  gap: 60px; /* Espacio entre las tarjetas */
   margin: 0 auto; /* Centra el contenedor horizontalmente */
   max-width: 1250px; /* Ancho máximo del contenedor */
   margin-right: 100px;
@@ -22,7 +22,17 @@
   text-align: center;
   width: 100%; /* Ancho de la tarjeta al 100% */
   max-width: 250px; /* Ancho máximo de la tarjeta */
-  height: 350px; /* Altura de la tarjeta */
+  height: 320px; /* Altura de la tarjeta */
+  border: 1px solid #ccc;
+  border-radius: 0px;
+  padding: 10px;
+  box-shadow: 0 6px 9px rgba(0, 0, 0, 0.1);
+}
+.custom-card2 {
+  text-align: center;
+  width: 100%; /* Ancho de la tarjeta al 100% */
+  max-width: 250px; /* Ancho máximo de la tarjeta */
+  height: 280px; /* Altura de la tarjeta */
   border: 1px solid #ccc;
   border-radius: 0px;
   padding: 10px;
@@ -38,14 +48,40 @@
   border: 4px solid #C1D72F; /* Borde de 2px de ancho y color verde #C1D72F */
 }
 
+.custom-card2 img {
+  width: 50%; /* Ancho de la imagen */
+  height: auto; /* Altura automática para mantener la proporción */
+  border-radius: 50%; /* Hace que la imagen sea circular */
+  object-fit: cover;
+  border: 2px solid #C1D72F;
+  /* Agrega un efecto de neón con una sombra parpadeante */
+  animation: neonEffect 1.5s ease-in-out infinite alternate;
+}
+
+@keyframes neonEffect {
+  100% {
+    box-shadow: 0 0 3x #C1D72F, 0 0 20px #C1D72F, 0 0 30px #C1D72F;
+  }
+  100% {
+    box-shadow: 0 0 16px #C1D72F, 0 0 7px #C1D72F, 0 0 7px #C1D72F;
+  }
+}
+
 /* Estilo para el nombre del contacto */
 .custom-card h3 {
+  margin-top: 12px;
+  margin-bottom: 0px;
+}
+.custom-card2 h3 {
   margin-top: 12px;
   margin-bottom: 0px;
 }
 
 /* Estilo para el correo electrónico del contacto */
 .custom-card p {
+  margin: 0;
+}
+.custom-card2 p {
   margin: 0;
 }
 
@@ -76,10 +112,50 @@
 
 /* Media Query para dispositivos más pequeños */
 @media screen and (max-width: 768px) {
+  .custom-card {
+    text-align: center;
+    width: 100%; /* Ancho de la tarjeta al 100% */
+    max-width: 250px; /* Ancho máximo de la tarjeta */
+    height: 270px; /* Altura de la tarjeta */
+    border: 1px solid #ccc;
+    border-radius: 0px;
+    padding: 10px;
+    box-shadow: 0 6px 9px rgba(0, 0, 0, 0.1);
+  }
+
+  .custom-card2 {
+    text-align: center;
+    width: 100%; /* Ancho de la tarjeta al 100% */
+    max-width: 280px; /* Ancho máximo de la tarjeta */
+    height: 270px; /* Altura de la tarjeta */
+    border: 1px solid #ccc;
+    border-radius: 0px;
+    padding: 10px;
+    box-shadow: 0 6px 9px rgba(0, 0, 0, 0.1);
+  }
   .custom-card-container {
-    padding: 80px;
+    padding: 70px;
     grid-template-columns: repeat(1, 1fr); /* Cambia a dos columnas en dispositivos más pequeños */
   }
+  .custom-button-remove {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: auto; /* Ajusta el margen superior */
+  }
+  
+  /* Estilo para cada botón de imagen dentro del contenedor .custom-button-remove */
+  .custom-button-remove .custom-button-image {
+    margin-top: 10px;
+    margin-left: 83px;
+    width: 32px; /* Ancho de la imagen */
+    height: 32px; /* Altura de la imagen */
+    cursor: pointer;
+    border: 2px solid #C1D72F;
+    border-radius: 4px;
+    padding: 5px;
+  }
+  
 }
 
   
